@@ -1,0 +1,26 @@
+﻿<!DOCTYPE html>
+<html lang="en" data-ng-app="MainApp">
+<head>
+    <title data-ng-controller="PageTitleController"
+           data-ng-bind-template="{{pageTitleModel.getTitle()}}">Home</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        [data-ng-cloak] {
+            display: none;
+        }
+    </style>
+
+    @Styles.Render("~/Content/maincss")
+</head>
+<body data-ng-cloak>
+
+    <div class="main-container">
+        @RenderBody()
+    </div>
+
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/application")
+    @RenderSection("scripts", required: false)
+</body>
+</html>
