@@ -2,7 +2,6 @@
 angular.module('AboutComponentsModule', [
   'AboutControllerModule',
   'AboutDataServiceModule',
-  'AboutWrapperServiceModule',
   'AboutModelModule'
 ]);
 
@@ -13,7 +12,6 @@ angular.module('AboutComponentsModule', [
  * @requires $scope
  * @requires MenuMainModel
  * @requires AboutDataService
- * @requires AboutWrapperService
  * @requires AboutModel
  * @requires PageTitleModel
  * @requires PageHeaderModel
@@ -31,17 +29,17 @@ angular.module('AboutControllerModule', []).controller('AboutController', [
   '$scope',
   'MenuMainModel',
   'AboutDataService',
-  'AboutWrapperService',
+  'TitleService',
   'AboutModel',
   'PageTitleModel',
   'PageHeaderModel',
-  function ($scope, MenuMainModel, AboutDataService, AboutWrapperService, AboutModel, PageTitleModel, PageHeaderModel) {
+  function ($scope, MenuMainModel, AboutDataService, TitleService, AboutModel, PageTitleModel, PageHeaderModel) {
       $scope.aboutModel = AboutModel;
       MenuMainModel.setCurrentMenuItemId(MenuMainModel.ABOUT);
       AboutDataService.query(function (data) {
           AboutModel.setParagraphs(data.paragraphs);
       });
-      AboutWrapperService.query(function (data) {
+      TitleService.get(PageTitles.ABOUT, function (data) {
           PageTitleModel.setTitle(data.title);
           PageHeaderModel.setTitle(data.header.title);
           PageHeaderModel.setParagraphs(data.header.paragraphs);
@@ -82,19 +80,4 @@ angular.module('AboutModelModule', []).factory('AboutModel', function () {
             return _paragraphs;
         }
     };
-});/* global angular */
-/**
- * @ngdoc service
- * @name AboutWrapperService
- * @requires $resource
- * @description
- *
- * Service to get the wrapper for the about page.
- *
- */
-angular.module('AboutWrapperServiceModule', ['ngResource']).factory('AboutWrapperService', [
-  '$resource',
-  function ($resource) {
-      return $resource(Data.aboutWrapper, {}, { query: { method: 'GET' } });
-  }
-]);
+});

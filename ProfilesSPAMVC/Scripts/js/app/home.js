@@ -2,8 +2,7 @@
 angular.module('HomeComponentsModule', [
   'HomeControllerModule',
   'HomeModelModule',
-  'HomeDataServiceModule',
-  'HomeWrapperServiceModule'
+  'HomeDataServiceModule'
 ]);/* global angular */
 /**
  * @ngdoc object
@@ -31,21 +30,15 @@ angular.module('HomeControllerModule', []).controller('HomeController', [
   '$scope',
   'MenuMainModel',
   'HomeDataService',
-  'HomeWrapperService',
   'HomeModel',
   'PageTitleModel',
   'PageHeaderModel',
   'TitleService',
-  function ($scope, MenuMainModel, HomeDataService, HomeWrapperService, HomeModel, PageTitleModel, PageHeaderModel, TitleService) {
+  function ($scope, MenuMainModel, HomeDataService, HomeModel, PageTitleModel, PageHeaderModel, TitleService) {
       $scope.homeModel = HomeModel;
       MenuMainModel.setCurrentMenuItemId(MenuMainModel.HOME);
       HomeDataService.query(function (data) {
           HomeModel.setMarkdownParagraphs(data.markdownParagraphs);
-      });
-      HomeWrapperService.query(function (data) {
-          PageTitleModel.setTitle(data.title);
-          PageHeaderModel.setTitle(data.header.title);
-          PageHeaderModel.setParagraphs(data.header.paragraphs);
       });
 
       TitleService.get(PageTitles.HOME, function (data) {
@@ -92,20 +85,3 @@ angular.module('HomeModelModule', []).factory('HomeModel', function () {
         }
     };
 });
-
-/* global angular */
-/**
- * @ngdoc service
- * @name HomeWrapperService
- * @requires $resource
- * @description
- *
- * Service to get the wrapper for the home page.
- *
- */
-angular.module('HomeWrapperServiceModule', ['ngResource']).factory('HomeWrapperService', [
-  '$resource',
-  function ($resource) {
-      return $resource(Data.homeWrapper, {}, { query: { method: 'GET' } });
-  }
-]);
