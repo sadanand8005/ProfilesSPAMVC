@@ -133,6 +133,9 @@
     <Compile Include="Controllers\AboutController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ResourcesController.cs" />
+    <Compile Include="Controllers\TitleController.cs" />
+    <Compile Include="DB\ProfileContext.cs" />
+    <Compile Include="DB\ProfileDBInitializer.cs" />
     <Compile Include="MockData\MockWrappers.cs" />
     <Compile Include="Controllers\ProfileController.cs" />
     <Compile Include="Global.asax.cs">
@@ -143,7 +146,7 @@
     <Compile Include="Models\HomeData.cs" />
     <Compile Include="Models\Profile.cs" />
     <Compile Include="Models\Resources.cs" />
-    <Compile Include="Models\Wrapper.cs" />
+    <Compile Include="Models\TitleDescription.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -165,7 +168,8 @@
     <Content Include="Content\img\thm\humphrey.b.bear.jpg" />
     <Content Include="Content\img\thm\marissa-mayer.jpg" />
     <Content Include="Content\img\thm\richard-branson.jpg" />
-    <Content Include="Scripts\js\app\angular-spa-demo.ngmin.js" />
+    <Content Include="Scripts\js\app\about.js" />
+    <Content Include="Scripts\js\app\app.js" />
     <Content Include="Content\views\components\home\home-main-view.html" />
     <Content Include="Content\views\components\profiles\profiles-main-view.html" />
     <Content Include="Content\views\components\resources\resources-main-view.html" />
@@ -173,6 +177,11 @@
     <Content Include="Content\views\directives\page\page-footer-view.html" />
     <Content Include="Content\views\directives\page\page-header-view.html" />
     <Content Include="Scripts\js\app\Common.js" />
+    <Content Include="Scripts\js\app\home.js" />
+    <Content Include="Scripts\js\app\menu.js" />
+    <Content Include="Scripts\js\app\page.js" />
+    <Content Include="Scripts\js\app\profile.js" />
+    <Content Include="Scripts\js\app\resource.js" />
     <Content Include="Scripts\js\lib\angular-animate.js" />
     <Content Include="Scripts\js\lib\angular-animate\angular-animate.js" />
     <Content Include="Scripts\js\lib\angular-animate\angular-animate.min.js" />
@@ -754,8 +763,6 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\About\MainView.cshtml" />

@@ -5,8 +5,10 @@ using System.Web;
 
 namespace ProfilesSPAMVC.Models
 {
-    public class Resources
+    public class Resource
     {
-        public List<string> paragraphs { get; set; }
+        public int ResourceId { get; set; }
+        public string ResourceName { get; set; }
+        public string paragraphs { get; set; }
     }
 }

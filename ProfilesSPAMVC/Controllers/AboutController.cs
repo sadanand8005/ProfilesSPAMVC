@@ -19,12 +19,7 @@ namespace ProfilesSPAMVC.Controllers
 
         public JsonResult Data()
         {
-            Resources resources = new Resources();
-
-            string[] _paragraphs = new string[] { 
-                "I am developing this mini-site to learn AngularJS, and to showcase what I have learned."
-            };
-
+            Resource resources = new Resource();
             resources.paragraphs = "I am developing this mini-site to learn AngularJS, and to showcase what I have learned.";
 
             return Json(resources, JsonRequestBehavior.AllowGet);

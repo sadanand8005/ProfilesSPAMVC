@@ -12,27 +12,24 @@ namespace ProfilesSPAMVC.MockData
         {
             List<Profile> profiles = new List<Profile>();
             Profile _profile;
-            Name _name;
             Data _data;
             Image _image;
             List<Link> _links;
             string[] _blurbs;
             string[] _skillsMatrix;
-
+            List<Skill> _skills;
 
             /////////////////////////////////////
             _profile = new Profile();
 
-            _name = new Name();
-            _profile.name = _name;
-            _name.first = "Richard";
-            _name.last = "Branson";
+            _profile.FirstName = "Richard";
+            _profile.LastName = "Branson";
 
             _image = new Image();
             _data = new Data();
             _profile.data = _data;
 
-            _data.image = _image;
+           _profile.image = _image;
             _image.source = "Content/img/thm/richard-branson.jpg";
             _image.alt = _image.title = string.Empty;
 
@@ -49,7 +46,7 @@ namespace ProfilesSPAMVC.MockData
                 "Add to this mix a charismatic persona and an extraordinary business acumen, and you have one of the most well-known and iconic figures of today’s business world. <a href='http://blog.iqmatrix.com/richard-branson' target='_blank'><small>[source]</small></a>"
             };
 
-            _data.blurb = _blurbs.ToList();
+            _data.blurb = string.Join("</p><p>", _blurbs);
 
             _skillsMatrix = new string[]{
                 "Flexible thought",
@@ -62,23 +59,29 @@ namespace ProfilesSPAMVC.MockData
                 "Good communication skills"
             };
 
-            _data.skillsMatrix = _skillsMatrix.ToList();
+            _skills = new List<Skill>();
+
+            foreach (var key in _skillsMatrix)
+            {
+                var skill = new Skill() { skill = key };
+                _skills.Add(skill);
+            }
+
+            _data.skillsMatrix = _skills;
 
             profiles.Add(_profile);
 
             /////////////////////////////////////
             _profile = new Profile();
 
-            _name = new Name();
-            _profile.name = _name;
-            _name.first = "Barack";
-            _name.last = "Obama";
+            _profile.FirstName = "Barack";
+            _profile.LastName = "Obama";
 
             _image = new Image();
             _data = new Data();
             _profile.data = _data;
 
-            _data.image = _image;
+           _profile.image = _image;
             _image.source = "Content/img/thm/barack-obama.jpg";
             _image.alt = _image.title = string.Empty;
 
@@ -95,7 +98,7 @@ namespace ProfilesSPAMVC.MockData
                 "His accomplishment in going from a relative unknown to the most talked about person on the planet in less than 18 months provides a lot of valuable lessons to anyone marketing a product, a service&hellip; or a person. <a href='http://marketingwizdom.com/archives/1952' target='_blank'><small>[source]</small></a>"
              };
 
-            _data.blurb = _blurbs.ToList();
+            _data.blurb = string.Join("</p><p>", _blurbs);
 
             _skillsMatrix = new string[]{
                 "Trust",
@@ -107,24 +110,29 @@ namespace ProfilesSPAMVC.MockData
                 "Story telling"
             };
 
-            _data.skillsMatrix = _skillsMatrix.ToList();
+            _skills = new List<Skill>();
+
+            foreach (var key in _skillsMatrix)
+            {
+                var skill = new Skill() { skill = key };
+                _skills.Add(skill);
+            }
+
+            _data.skillsMatrix = _skills;
 
             profiles.Add(_profile);
-
 
             //////////////////////////////////////////
             _profile = new Profile();
 
-            _name = new Name();
-            _profile.name = _name;
-            _name.first = "Marissa";
-            _name.last = "Mayer";
+            _profile.FirstName = "Marissa";
+            _profile.LastName = "Mayer";
 
             _image = new Image();
             _data = new Data();
             _profile.data = _data;
 
-            _data.image = _image;
+           _profile.image = _image;
             _image.source = "Content/img/thm/marissa-mayer.jpg";
             _image.alt = _image.title = string.Empty;
 
@@ -142,7 +150,7 @@ namespace ProfilesSPAMVC.MockData
                 "Rather, she is present in all major Google services developed over the company's first transformative decade. <a href='http://www.guardian.co.uk/technology/2012/jul/17/google-marissa-mayer-yahoo-profile' target='_blank'><small>[source]</small></a>"
             };
 
-            _data.blurb = _blurbs.ToList();
+            _data.blurb = string.Join("</p><p>", _blurbs);
 
             _skillsMatrix = new string[]{
                 "incredibly smart",
@@ -153,7 +161,15 @@ namespace ProfilesSPAMVC.MockData
                 "invented Google AdWords"
             };
 
-            _data.skillsMatrix = _skillsMatrix.ToList();
+            _skills = new List<Skill>();
+
+            foreach (var key in _skillsMatrix)
+            {
+                var skill = new Skill() { skill = key };
+                _skills.Add(skill);
+            }
+
+            _data.skillsMatrix = _skills;
 
             profiles.Add(_profile);
 
@@ -161,16 +177,14 @@ namespace ProfilesSPAMVC.MockData
             ///////////////////////////////////////
             _profile = new Profile();
 
-            _name = new Name();
-            _profile.name = _name;
-            _name.first = "Hillary";
-            _name.last = "Clinton";
+            _profile.FirstName = "Hillary";
+            _profile.LastName = "Clinton";
 
             _image = new Image();
             _data = new Data();
             _profile.data = _data;
 
-            _data.image = _image;
+           _profile.image = _image;
             _image.source = "Content/img/thm/hillary-clinton.jpg";
             _image.alt = _image.title = string.Empty;
 
@@ -186,7 +200,7 @@ namespace ProfilesSPAMVC.MockData
                 "She deserves a shot because she possesses three skills crucial to the office of the president: making lemonade out of life's many lemons, learning from her mistakes and taking the heat. <a href='http://www.guardian.co.uk/commentisfree/2012/sep/25/hillary-clinton-deserves-shot-at-presidency' target='_blank'><small>[source]</small></a>"
             };
 
-            _data.blurb = _blurbs.ToList();
+            _data.blurb = string.Join("</p><p>", _blurbs);
 
             _skillsMatrix = new string[]{
                 "tough",
@@ -196,24 +210,29 @@ namespace ProfilesSPAMVC.MockData
                 "popular"
             };
 
-            _data.skillsMatrix = _skillsMatrix.ToList();
+            _skills = new List<Skill>();
+
+            foreach (var key in _skillsMatrix)
+            {
+                var skill = new Skill() { skill = key };
+                _skills.Add(skill);
+            }
+
+            _data.skillsMatrix = _skills;
 
             profiles.Add(_profile);
-
 
             ///////////////////////////////////////////
             _profile = new Profile();
 
-            _name = new Name();
-            _profile.name = _name;
-            _name.first = "Humphrey B.";
-            _name.last = "Bear";
+            _profile.FirstName = "Humphrey B.";
+            _profile.LastName = "Bear";
 
             _image = new Image();
             _data = new Data();
             _profile.data = _data;
 
-            _data.image = _image;
+           _profile.image = _image;
             _image.source = "Content/img/thm/humphrey.b.bear.jpg";
             _image.alt = "This guy has no overview and no skills. And no trousers.";
             _image.title = string.Empty;

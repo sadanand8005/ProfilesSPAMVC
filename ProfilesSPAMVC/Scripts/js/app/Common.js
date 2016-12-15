@@ -23,8 +23,11 @@ var Data = (function () {
         profileWrapper: "Profiles/Wrapper",
         profileData: "Profiles/Data",
         resourceWrapper: "Resources/Wrapper",
-        resourceData: "Resources/Data"
+        resourceData: "Resources/Data",
+        TitleAPI: "api/Title/:id"
     };
 
     return _api;
 })();
+
+var PageTitles = { HOME: 1, PROFILES: 2, RESOURCES: 3, ABOUT: 4 };

@@ -23,6 +23,5 @@ namespace ProfilesSPAMVC.Controllers
         {
             return Ok(MockProfiles.GetProfiles());
         }
-
     }
 }

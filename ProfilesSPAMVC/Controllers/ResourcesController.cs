@@ -20,14 +20,9 @@ namespace ProfilesSPAMVC.Controllers
         [Route("Resources/Data")]
         public IHttpActionResult GetResourceData()
         {
-            Resources resources = new Resources();
-            
-            string[] _paragraphs = new string[] { 
-                "I've spent a lot of time researching AngularJS.",
-                "Here are some of the most useful resources I have found."
-            };
+            Resource resources = new Resource();
 
-            resources.paragraphs = _paragraphs.ToList();
+            resources.paragraphs = "I've spent a lot of time researching AngularJS. </p><p> Here are some of the most useful resources I have found.";
 
             return Ok(resources);
         }

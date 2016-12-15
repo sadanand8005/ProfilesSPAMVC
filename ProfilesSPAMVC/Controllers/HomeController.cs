@@ -13,6 +13,7 @@ namespace ProfilesSPAMVC.Controllers
     {
         public ActionResult Index()
         {
+
             return View();
         }
 
@@ -24,10 +25,9 @@ namespace ProfilesSPAMVC.Controllers
             contents.Add("For a more complex page that illustrates responsive web design, see the [profiles](#/profiles) page.");
             contents.Add("I have listed a bunch of useful [resources](#/resources) I have found along the way.");
             contents.Add("And for further information describing technical capabilities this site illustrates, see [about](#/about).");
-            contents.Add("The full source is available on [github](https://github.com/mcalthrop/angular-spa-demo).");
-            contents.Add("**Note:** this is a work in progress; you can see [what's in the pipeline](https://github.com/mcalthrop/angular-spa-demo#pipeline).");
+            contents.Add("**Note:** this is a work in progress.");
 
-            homedata.markdownParagraphs = contents;
+            homedata.markdownParagraphs = string.Join("</p><p>", contents);
 
             return Json(homedata, JsonRequestBehavior.AllowGet);
         }

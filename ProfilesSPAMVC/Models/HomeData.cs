@@ -7,6 +7,6 @@ namespace ProfilesSPAMVC.Models
 {
     public class HomeData
     {
-        public List<String> markdownParagraphs { get; set; }
+        public string markdownParagraphs { get; set; }
     }
 }

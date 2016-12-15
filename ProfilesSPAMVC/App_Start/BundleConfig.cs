@@ -40,7 +40,13 @@ namespace ProfilesSPAMVC
             // angular-spa-demo.ngmin will have the SPA implementation
             bundles.Add(new ScriptBundle("~/bundles/application").Include(
                       "~/Scripts/js/app/Common.js",
-                      "~/Scripts/js/app/angular-spa-demo.ngmin.js"));
+                      "~/Scripts/js/app/app.js",
+                      "~/Scripts/js/app/about.js",
+                      "~/Scripts/js/app/home.js",
+                      "~/Scripts/js/app/menu.js",
+                      "~/Scripts/js/app/page.js",
+                      "~/Scripts/js/app/profile.js",
+                      "~/Scripts/js/app/resource.js"));
 
             // CSS for this application, prefer using bundle as it minifies automatically at run time.
             bundles.Add(new StyleBundle("~/Content/maincss").Include(

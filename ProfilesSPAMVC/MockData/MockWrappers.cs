@@ -8,50 +8,46 @@ namespace ProfilesSPAMVC.MockData
 {
     public class MockWrappers
     {
-        public static Wrapper GetProfileWrapper()
+        public static TitleDescription GetProfileWrapper()
         {
-            Wrapper wrapper = new Wrapper();
+            TitleDescription wrapper = new TitleDescription();
             wrapper.title = "Profiles";
             wrapper.header = new Header();
             wrapper.header.title = "Person Profiles";
-            wrapper.header.paragraphs = new List<string>();
-            wrapper.header.paragraphs.Add("This page demonstrates a slightly more complex (if contrived) AngularJS page implementation.");
+            wrapper.header.paragraphs = "This page demonstrates a slightly more complex (if contrived) AngularJS page implementation.";
 
             return wrapper;
         }
 
-        public static Wrapper GetHomeWrapper()
+        public static TitleDescription GetHomeWrapper()
         {
-            Wrapper wrapper = new Wrapper();
+            TitleDescription wrapper = new TitleDescription();
             wrapper.title = "Home";
             wrapper.header = new Header();
             wrapper.header.title = "Welcome";
-            wrapper.header.paragraphs = new List<string>();
-            wrapper.header.paragraphs.Add("AngularJS SPA Demo");
+            wrapper.header.paragraphs = "AngularJS SPA Demo";
 
             return wrapper;
         }
 
-        public static Wrapper GetResourceWrapper()
+        public static TitleDescription GetResourceWrapper()
         {
-            Wrapper wrapper = new Wrapper();
+            TitleDescription wrapper = new TitleDescription();
             wrapper.title = "Resources";
             wrapper.header = new Header();
             wrapper.header.title = "Resources";
-            wrapper.header.paragraphs = new List<string>();
-            wrapper.header.paragraphs.Add("AngularJS Resources");
+            wrapper.header.paragraphs = "AngularJS Resources";
 
             return wrapper;
         }
 
-        public static Wrapper GetAboutWrapper()
+        public static TitleDescription GetAboutWrapper()
         {
-            Wrapper wrapper = new Wrapper();
+            TitleDescription wrapper = new TitleDescription();
             wrapper.title = "About";
             wrapper.header = new Header();
             wrapper.header.title = "About";
-            wrapper.header.paragraphs = new List<string>();
-            wrapper.header.paragraphs.Add("More information");
+            wrapper.header.paragraphs = "More information";
 
             return wrapper;
         }
